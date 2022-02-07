@@ -68,10 +68,12 @@ The analysis for a contract Analyzed can be invoked by calling
 `symb_run(type(Analyzed).runtimeCode)`, as seen in the tests.
 
 Note that the settings in this repo are **not** using the Solidity compiler's
-optimizers on purpose.
-The optimizer itself already removes this branch from the bytecode.
-It is likely that most (or all) the cases that this engine could optimize are
+optimizer on purpose.
+The optimizer itself already removes some of these branches from the bytecode.
+It is likely that many of the the cases that this engine could optimize are
 already covered by the compiler.
+You will likely notice test result differences if you enable/disable the
+optimizer settings in`foundry.toml`.
 Need to run more tests.
 
 Difference Logic (DL)
