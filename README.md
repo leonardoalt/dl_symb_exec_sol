@@ -13,6 +13,9 @@ Therefore, any framework that allows tests in Solidity should be able to run
 this symbolic execution, without any extra tooling.
 Since that code is not going to be deployed anyway we don't care about gas.
 
+The VM opcode handling part was inspired by
+https://github.com/Ohalo-Ltd/solevm.
+
 Analysis
 --------
 
