@@ -2,9 +2,12 @@
 pragma solidity >=0.8.10;
 
 /// @dev An actual integer constant.
-type Constant is int;
+//type Constant is int;
 /// @dev A variable is represented by its id.
-type Var is uint;
+//type Var is uint;
+
+enum Constant(int);
+enum Var(uint);
 
 /// @dev A Difference Logic constraint has the form a - b <= k.
 struct Expr {
@@ -14,11 +17,13 @@ struct Expr {
 }
 
 function mk_const(int x) pure returns (Constant) {
-	return Constant.wrap(x);
+	//return Constant.wrap(x);
+	return Constant(x);
 }
 
 function mk_var(uint x) pure returns (Var) {
-	return Var.wrap(x);
+	//return Var.wrap(x);
+	return Var(x);
 }
 
 function copy_expr(Expr memory expr) pure returns (Expr memory) {
