@@ -4,4 +4,11 @@ out = 'out'
 libs = ['lib']
 remappings = ['ds-test/=lib/ds-test/src/']
 
+optimizer = false
+optimizer_runs = 0
+
+[optimizer_details]
+constantOptimizer = false
+yul = false
+
 # See more config options https://github.com/gakonst/foundry/tree/master/config
