@@ -1,4 +1,5 @@
 **This code base is not meant to be used seriously, it's only a study.**
+========================================================================
 
 EVM Symbolic Execution in Solidity
 ==================================
