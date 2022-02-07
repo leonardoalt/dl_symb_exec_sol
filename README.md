@@ -50,16 +50,19 @@ $ forge test --match symb_run -vvvv
 In the last test, you should see
 
 ```
-[PASS] test_symb_run_unreachable() (gas: 52629772)
+[PASS] test_symb_run_unreachable() (gas: 687208634)
 Traces:
 
-  [52629772] SymbExecTest::test_symb_run_unreachable()
-    ├─ emit UnreachableBranch(pc: 129)
+  [687208634] SymbExecTest::test_symb_run_unreachable()
+    ├─ emit UnreachableBranch(pc: 382)
+    ├─ emit UnreachableBranch(pc: 425)
+    ├─ emit UnreachableBranch(pc: 468)
+    ├─ emit UnreachableBranch(pc: 550)
     └─ ← ()
 ```
 
-This shows that the analysis found a useless branch in the bytecode!
-Check `src/test/SymbExec.t.sol` to understand why.
+This shows that the analysis found 4 useless branches in the bytecode!
+Check `src/test/SymbExec.t.sol` to understand why/where.
 
 The analysis for a contract Analyzed can be invoked by calling
 `symb_run(type(Analyzed).runtimeCode)`, as seen in the tests.
