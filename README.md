@@ -47,6 +47,11 @@ To run the latter:
 $ forge test --match symb_run -vvvv
 ```
 
+The first test, `SymbExecTest::test_symb_run_simple`, shows us that the branch
+starting at program counter 0x14 is unreachable! It can therefore be removed.
+That branch is `tag_2`, which represents the inner `if` in the sample Yul code.
+See the test for a detailed explanation.
+
 In the last test, you should see
 
 ```
@@ -70,8 +75,8 @@ The analysis for a contract Analyzed can be invoked by calling
 Note that the settings in this repo are **not** using the Solidity compiler's
 optimizer on purpose.
 The optimizer itself already removes some of these branches from the bytecode.
-It is likely that many of the the cases that this engine could optimize are
-already covered by the compiler.
+It is likely that many of the cases that this engine could optimize are already
+covered by the compiler.
 You will likely notice test result differences if you enable/disable the
 optimizer settings in`foundry.toml`.
 Need to run more tests.

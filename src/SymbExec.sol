@@ -103,15 +103,20 @@ function run_from(
 			// True branch, start new branch.
 			context.counter = run_from(EVMContext(context.code, copy_stack(context.stack), context.pc, copy_path(context.path), new_constraints, context.counter), handlers);
 
+			// TODO
+			// The stuff below is actually not sound.
+			// It requires the true branch above to be terminating.
 			// Only one constraint was added, so it wasn't an EQ,
 			// so we can safely negate it for the false branch,
 			// otherwise solving it becomes NP-hard.
+			/*
 			if (new_constraints.length == context.constraints.length + 1) {
 				context.constraints = extend_constraints(
 					context.constraints,
 					one_expr(new_constraints[new_constraints.length - 1])
 				);
 			}
+			*/
 
 			// False branch, continue this execution.
 			context.pc = prev_pc + 1;
