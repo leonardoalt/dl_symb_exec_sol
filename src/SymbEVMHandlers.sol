@@ -357,7 +357,7 @@ function symb_handlers() pure returns (Handler[256] memory) {
 		inv,
 		inv,
 		Handler(handleTerminatingOpcode, 2, 0),
-		inv,
+		Handler(handleTerminatingOpcode, 0, 0),
 		Handler(handleTerminatingOpcode, 1, 0)
 	];
 }

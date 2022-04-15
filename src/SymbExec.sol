@@ -120,7 +120,7 @@ function run_from(
 
 			// False branch, continue this execution.
 			context.pc = prev_pc + 1;
-		} else if (opcode == RETURN || opcode == REVERT || opcode == STOP || opcode == SELFDESTRUCT) {
+		} else if (opcode == RETURN || opcode == REVERT || opcode == INVALID || opcode == STOP || opcode == SELFDESTRUCT) {
 			// Terminate branch.
 			return context.counter;
 		}
