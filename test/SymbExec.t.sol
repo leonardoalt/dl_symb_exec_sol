@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: GPL-v3
-pragma solidity >=0.8.10;
+pragma solidity >=0.8.17;
 
-import "ds-test/test.sol";
+import "forge-std/Test.sol";
 
-import "../SymbExec.sol";
+import "../src/SymbExec.sol";
 
 contract EmptyRuntime {}
 
@@ -48,10 +48,11 @@ contract Unreachable {
 			require(x <= 10);
 			// Unreachable.
 		}
+        return true;
 	}
 }
 
-contract SymbExecTest is DSTest {
+contract SymbExecTest is Test {
 	function test_symb_run_smoke() public {
 
 		symb_run(type(EmptyRuntime).runtimeCode);

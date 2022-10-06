@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: GPL-v3
-pragma solidity >=0.8.10;
+pragma solidity >=0.8.17;
 
-import "ds-test/test.sol";
+import "forge-std/Test.sol";
 
-import "../DLExpr.sol";
-import "../DLSolver.sol";
+import "../src/DLExpr.sol";
+import "../src/DLSolver.sol";
 
-contract DLSolverTest is DSTest {
+contract DLSolverTest is Test {
 	function setUp() public {}
 
 	function expect_result(Expr[] memory problem, DLResult result) internal {
